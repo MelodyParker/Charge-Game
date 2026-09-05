@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bnptqge86jl8t"]
+
+[ext_resource type="Script" uid="uid://7rfeti31vmep" path="res://coulomb.gd" id="1_2c62f"]
+[ext_resource type="PackedScene" uid="uid://crxq45cvhys8d" path="res://charged_particle.tscn" id="2_2c62f"]
+
+[node name="Node2D" type="Node2D" unique_id=1055403985]
+script = ExtResource("1_2c62f")
+K = 65000.0
+
+[node name="ChargedParticle" parent="." unique_id=902750694 instance=ExtResource("2_2c62f")]
+position = Vector2(356, 277)
+charge = 27.0
+
+[node name="ChargedParticle3" parent="." unique_id=406978388 instance=ExtResource("2_2c62f")]
+position = Vector2(512, 250)
+charge = -27.0
+
+[node name="ChargedParticle2" parent="." unique_id=65349076 instance=ExtResource("2_2c62f")]
+position = Vector2(744, 245)
+charge = 27.0

@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://crxq45cvhys8d"]
+
+[ext_resource type="Script" uid="uid://bfl7h7n2mf3x7" path="res://charged_particle.gd" id="1_yrxp6"]
+
+[sub_resource type="Gradient" id="Gradient_onrkg"]
+offsets = PackedFloat32Array(0.5985577, 0.66586536)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_k7gqt"]
+gradient = SubResource("Gradient_onrkg")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w1lh6"]
+radius = 18.027756
+
+[node name="ChargedParticle" type="RigidBody2D" unique_id=902750694 groups=["charged"]]
+gravity_scale = 0.0
+script = ExtResource("1_yrxp6")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=571568958]
+position = Vector2(-1.9073486e-06, 1.9073486e-06)
+scale = Vector2(0.640625, 0.640625)
+texture = SubResource("GradientTexture2D_k7gqt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=139041258]
+shape = SubResource("CircleShape2D_w1lh6")

@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://cl63027hscox2"]
+
+[ext_resource type="Script" uid="uid://ctmbvxysu63hm" path="res://gravity.gd" id="1_pxd2d"]
+[ext_resource type="Script" uid="uid://cocubbcxyjjei" path="res://color-changing.gd" id="2_547df"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_4flbx"]
+
+[sub_resource type="Gradient" id="Gradient_pxd2d"]
+offsets = PackedFloat32Array(0.5985577, 0.66586536)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_osap4"]
+gradient = SubResource("Gradient_pxd2d")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w1lh6"]
+radius = 18.027756
+
+[node name="Node2D" type="Node2D" unique_id=1510053169]
+
+[node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=337195369]
+physics_material_override = SubResource("PhysicsMaterial_4flbx")
+gravity_scale = 0.0
+can_sleep = false
+script = ExtResource("1_pxd2d")
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D" unique_id=1861588429]
+position = Vector2(-1.9073486e-06, 1.9073486e-06)
+scale = Vector2(0.640625, 0.640625)
+texture = SubResource("GradientTexture2D_osap4")
+script = ExtResource("2_547df")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=1717484238]
+shape = SubResource("CircleShape2D_w1lh6")
